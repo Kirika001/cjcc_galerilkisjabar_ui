@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cjcc_galerilukisjabar/style/theme.dart';
-import 'package:custom_line_indicator_bottom_navbar/custom_line_indicator_bottom_navbar.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
@@ -306,14 +305,13 @@ class CustomTextBox extends StatelessWidget {
       ),
       child: TextField(
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(15),
-            hintText: placeholder,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            suffixIcon: Icon(Icons.search, color: Colors.red),
-          )
-      ),
+        contentPadding: const EdgeInsets.all(15),
+        hintText: placeholder,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        suffixIcon: Icon(Icons.search, color: Colors.red),
+      )),
     );
   }
 }
@@ -475,38 +473,45 @@ class CardCategory extends StatelessWidget {
 
 class CardProduct extends StatelessWidget {
   final String title;
-  final String? img;
+  final String img;
+  final VoidCallback? ontap;
 
-  const CardProduct({Key? key, required this.title, this.img})
+  const CardProduct(
+      {Key? key, required this.title, required this.img, this.ontap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      // padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.all(10),
-      // height: 200,
-      // width: MediaQuery.of(context).size.width * 0.45,
-      // decoration: BoxDecoration(
-      //   color: whiteColor,
-      //   borderRadius: BorderRadius.circular(10),
-      // ),
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 105,
-              color: greyColor,
-            ),
-            Text(
-              title,
-              style: blackTextStyle.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 16),
-            ),
-            ProfilTag(name: "Fulan bin Fulan", role: "Artist")
-          ],
+    return GestureDetector(
+      onTap: () {},
+      child: Card(
+        // padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
+        // height: 200,
+        // width: MediaQuery.of(context).size.width * 0.45,
+        // decoration: BoxDecoration(
+        //   color: whiteColor,
+        //   borderRadius: BorderRadius.circular(10),
+        // ),
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 105,
+                child: ClipRRect(
+                  child: Image.asset(img, fit: BoxFit.cover,),
+                ),
+              ),
+              Text(
+                title,
+                style: blackTextStyle.copyWith(
+                    fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              ProfilTag(name: "Fulan bin Fulan", role: "Artist")
+            ],
+          ),
         ),
       ),
     );
@@ -573,10 +578,10 @@ class CardOrder extends StatelessWidget {
 
   const CardOrder(
       {Key? key,
-        required this.noInvoice,
-        required this.name,
-        required this.location,
-        required this.shipping})
+      required this.noInvoice,
+      required this.name,
+      required this.location,
+      required this.shipping})
       : super(key: key);
 
   @override
@@ -636,7 +641,6 @@ class CardOrder extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           )
         ],
@@ -741,10 +745,10 @@ class CardOrderDikemas extends StatelessWidget {
 
   const CardOrderDikemas(
       {Key? key,
-        required this.noInvoice,
-        required this.name,
-        required this.location,
-        required this.shipping})
+      required this.noInvoice,
+      required this.name,
+      required this.location,
+      required this.shipping})
       : super(key: key);
 
   @override
@@ -828,10 +832,10 @@ class CardOrderDikirim extends StatelessWidget {
 
   const CardOrderDikirim(
       {Key? key,
-        required this.noInvoice,
-        required this.name,
-        required this.location,
-        required this.shipping})
+      required this.noInvoice,
+      required this.name,
+      required this.location,
+      required this.shipping})
       : super(key: key);
 
   @override
@@ -942,10 +946,10 @@ class CardOrderSelesai extends StatelessWidget {
 
   const CardOrderSelesai(
       {Key? key,
-        required this.noInvoice,
-        required this.name,
-        required this.location,
-        required this.shipping})
+      required this.noInvoice,
+      required this.name,
+      required this.location,
+      required this.shipping})
       : super(key: key);
 
   @override
@@ -1005,7 +1009,6 @@ class CardOrderSelesai extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           )
         ],
@@ -1105,8 +1108,8 @@ class CustomFolatingButton extends StatelessWidget {
   final IconData icon;
   final double? size;
 
-  const CustomFolatingButton({Key? key,
-    required this.icon, this.size}) : super(key: key);
+  const CustomFolatingButton({Key? key, required this.icon, this.size})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -1175,8 +1178,7 @@ class BigCollection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 227,
-      margin: const EdgeInsets.all(10),
-      // padding: const EdgeInsets.all(10),
+      // margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: whiteColor,
         borderRadius: BorderRadius.circular(10),

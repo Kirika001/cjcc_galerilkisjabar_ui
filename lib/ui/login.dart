@@ -28,7 +28,9 @@ class LoginPage extends StatelessWidget {
           CustomTextField(title: 'Email', placeholder: 'fulan@mail.com'),
           CustomTextField(title: 'Password', placeholder: 'password', ispassword: true,),
           CustomTextButton(title: 'Lupa Password ?', color: mainColor, margin: const EdgeInsets.symmetric(horizontal: 30),),
-          CustomFilledButton(title: 'Login', color: mainColor),
+          CustomFilledButton(title: 'Login', color: mainColor, onPressed: (){
+            Navigator.pushNamedAndRemoveUntil(context, '/home' , (route) => false);
+          },),
           CustomTransparanButton(title: 'Belum terdaftar? Register disini', onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> RegisterPage()));
           },),

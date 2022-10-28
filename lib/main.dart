@@ -7,6 +7,7 @@ import 'package:cjcc_galerilukisjabar/ui/home.dart';
 import 'package:cjcc_galerilukisjabar/ui/keranjang.dart';
 import 'package:cjcc_galerilukisjabar/ui/login.dart';
 import 'package:cjcc_galerilukisjabar/ui/main.dart';
+import 'package:cjcc_galerilukisjabar/ui/nonlogin.dart';
 import 'package:cjcc_galerilukisjabar/ui/pesanan.dart';
 import 'package:cjcc_galerilukisjabar/ui/posting.dart';
 import 'package:cjcc_galerilukisjabar/ui/profil.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/profil' : (context) => const ProfilPage(),
         '/chat' : (context) => const ChatPage(),
         '/chatroom' : (context) => const ChatroomPage(),
+        '/nonlogin' : (context) => const NonLoginPage(),
       },
 
     );

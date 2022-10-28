@@ -1,5 +1,6 @@
 import 'package:cjcc_galerilukisjabar/style/customMaterial.dart';
 import 'package:cjcc_galerilukisjabar/style/theme.dart';
+import 'package:cjcc_galerilukisjabar/ui/login.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
@@ -30,7 +31,11 @@ class RegisterPage extends StatelessWidget {
           CustomTextField(title: 'Email', placeholder: 'fulan@mail.com'),
           CustomTextField(title: 'Password', placeholder: 'password', ispassword: true,),
           CustomDropdown(title: 'Daftar Sebagai', items: ['Pelukis','Kolektor'], hint: "Daftar sebagai",),
-          CustomFilledButton(title: 'Register', color: mainColor)
+          CustomFilledButton(title: 'Register', color: mainColor),
+          CustomTransparanButton(title: 'Sudah terdaftar? Login disini', onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+          },),
+          SizedBox(height: 10,)
         ],
       ),
 

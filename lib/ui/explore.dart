@@ -38,7 +38,7 @@ class _ExplorePageState extends State<ExplorePage> {
                     mainAxisExtent: 220
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                  return CardProduct(title: "silent");
+                  return CardProduct(title: "silent $index", img: "assets/img$index.png",);
                 },
             ),
           ),

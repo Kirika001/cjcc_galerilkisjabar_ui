@@ -3,18 +3,19 @@ import 'package:cjcc_galerilukisjabar/style/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
-    return
-      Column(
+    return SafeArea(
+      child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(10),
@@ -22,13 +23,16 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset("assets/logo.png", height: 50,),
+                Image.asset(
+                  "assets/logo.png",
+                  height: 50,
+                ),
                 GestureDetector(
-                    onTap:(){
+                    onTap: () {
                       Navigator.pushNamed(context, '/chat');
                     },
-                    child: AppbarIcon(
-                        icon: Icons.chat, color: redColor, size: 30))
+                    child:
+                        AppbarIcon(icon: Icons.chat, color: redColor, size: 30))
               ],
             ),
           ),
@@ -48,8 +52,8 @@ class _HomePageState extends State<HomePage> {
                         CardCategory(title: 'oil painting'),
                         CardCategory(title: 'oil painting'),
                         IconButton(
-                            onPressed: (){},
-                            icon: Icon(Icons.chevron_right_outlined)
+                            onPressed: () {},
+                            icon: Icon(Icons.chevron_right_outlined),
                         )
                       ],
                     ),
@@ -67,6 +71,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
+      ),
     );
   }
 }

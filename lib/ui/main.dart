@@ -7,6 +7,8 @@ import 'package:custom_line_indicator_bottom_navbar/custom_line_indicator_bottom
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
+
+
   const MainPage({Key? key}) : super(key: key);
 
   @override
@@ -38,11 +40,6 @@ class _MainPageState extends State<MainPage> {
           setState(() {
             _currentIndex = index;
           });
-          // if(index == 0 ) {
-          //   Navigator.popAndPushNamed(context, _page[0]);
-          // } else {
-          // Navigator.pushNamed(context, _page[index]);
-          // }
         },
         enableLineIndicator: true,
         lineIndicatorWidth: 3,
@@ -56,10 +53,7 @@ class _MainPageState extends State<MainPage> {
             label: 'Katalog',
             icon: Icons.color_lens,
           ),
-          CustomBottomBarItems(
-              label: 'Telusuri',
-              icon: Icons.explore
-          ),
+          CustomBottomBarItems(label: 'Telusuri', icon: Icons.explore),
           CustomBottomBarItems(
             label: 'Profil',
             icon: Icons.person,

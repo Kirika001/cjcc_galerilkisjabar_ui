@@ -110,7 +110,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         color: Colors.transparent,
                         onPressed: () {
                           Navigator.pushNamedAndRemoveUntil(
-                              context, '/home', (route) => false);
+                              context, '/nonlogin', (route) => false);
                         },
                       )
                     ],
