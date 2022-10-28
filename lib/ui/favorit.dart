@@ -1,4 +1,4 @@
-import 'package:cjcc_galerilukisjabar/style/theme.dart';
+
 import 'package:flutter/material.dart';
 
 class FavoritPage extends StatefulWidget {

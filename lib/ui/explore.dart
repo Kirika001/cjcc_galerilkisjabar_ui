@@ -1,5 +1,6 @@
 import 'package:cjcc_galerilukisjabar/style/customMaterial.dart';
 import 'package:cjcc_galerilukisjabar/style/theme.dart';
+import 'package:cjcc_galerilukisjabar/ui/detail.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,21 @@ class _ExplorePageState extends State<ExplorePage> {
                     mainAxisExtent: 220
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                  return CardProduct(title: "silent $index", img: "assets/img$index.png",);
+                  return CardProduct(
+                    title: "silent $index",
+                    img: "assets/img$index.png",
+                    tag: "img$index",
+                    ontap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailPage(
+                                tag: "imgg$index",
+                                index: index,
+                                title: "silent $index",
+                              )));
+                    },
+                  );
                 },
             ),
           ),

@@ -474,43 +474,55 @@ class CardCategory extends StatelessWidget {
 class CardProduct extends StatelessWidget {
   final String title;
   final String img;
+  final String tag;
   final VoidCallback? ontap;
 
   const CardProduct(
-      {Key? key, required this.title, required this.img, this.ontap})
+      {Key? key,
+      required this.title,
+      required this.img,
+      this.ontap,
+      required this.tag})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Card(
-        // padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.all(10),
-        // height: 200,
-        // width: MediaQuery.of(context).size.width * 0.45,
-        // decoration: BoxDecoration(
-        //   color: whiteColor,
-        //   borderRadius: BorderRadius.circular(10),
-        // ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 105,
-                child: ClipRRect(
-                  child: Image.asset(img, fit: BoxFit.cover,),
+    return Hero(
+      tag: tag,
+      child: GestureDetector(
+        onTap: ontap,
+        child: Card(
+          // padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
+          // height: 200,
+          // width: MediaQuery.of(context).size.width * 0.45,
+          // decoration: BoxDecoration(
+          //   color: whiteColor,
+          //   borderRadius: BorderRadius.circular(10),
+          // ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 105,
+                  width: double.infinity,
+                  child: ClipRRect(
+                    child: Image.asset(
+                      img,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
-              Text(
-                title,
-                style: blackTextStyle.copyWith(
-                    fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              ProfilTag(name: "Fulan bin Fulan", role: "Artist")
-            ],
+                Text(
+                  title,
+                  style: blackTextStyle.copyWith(
+                      fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                ProfilTag(name: "Fulan bin Fulan", role: "Artist")
+              ],
+            ),
           ),
         ),
       ),
